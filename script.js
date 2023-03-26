@@ -1,14 +1,15 @@
 var userFullName = prompt('Enter your Full Name');
 var userFullNameWill = '';
 
-standartFullName(userFullName);
+standartFullName();
 
-function standartFullName(userFullName) {
+function standartFullName() {
     for (var str of userFullName.split(' ')) {
-        userFullNameWill += String(str.replace(str[0], str[0].toUpperCase())) + " ";
+        userFullNameWill += str.replace(str[0], str[0].toUpperCase()) + " ";
     }
 
-    console.log(userFullNameWill);
+    console.log('Homework 13:');
+    console.log('Full Name: ' + userFullNameWill.trim());
 }
 
 
@@ -24,8 +25,8 @@ function arrayIterationFirst() {
         sum += arrayNum[i];
     }
 
-    console.log(sum + ' sum of array elements');
-    console.log(arrayNum.length + ' element');
+    console.log('Homework 14:');
+    console.log('1) ' + arrayNum.length + ' positive element.' +  'Sum of positive elements = ' + sum);
 }
 
 
@@ -38,9 +39,9 @@ function maxMinNumber() {
     arrayNum = arrayNum.filter((numm) => numm <= 0);
     var min = Math.min.apply(null, arrayNum);
 
-    console.log(max + ' maximum array element');
-    console.log(min + ' minimum array element');
-    console.log(arrayNum.length + ' element');
+    console.log('2) Minimum array element = ' + min);
+    console.log('3) Maximum array element = ' + max);
+    console.log('4) Number of negative element = ' + arrayNum.length)
 }
 
 
@@ -56,16 +57,16 @@ function arrayIterationSecond() {
     arrayNum = arrayNum.map((num) => num % 2);
     for (; i < arrayNum.length; i++) {
         if (arrayNum[i] == 0) {
-            sumOdd += 1;
+            sumEven += 1;
         } 
         
         if (arrayNum[i] == 1) {
-            sumEven += 1;
+            sumOdd += 1;
         }
     }
 
-    console.log(sumOdd + ' odd elements');
-    console.log(sumEven + ' even elements');
+    console.log('5) Odd positive elements = ' + sumOdd);
+    console.log('6) Even negative elements = ' + sumEven);
 }
 
 
@@ -88,8 +89,8 @@ function arrayIterationThird() {
         }
     }
 
-    console.log(sumEven + ' the sum of all even');
-    console.log(sumOdd + ' the sum of all odd');
+    console.log('7) The sum of all even' + sumEven);
+    console.log('8) The sum of all odd' + sumOdd);
 }
 
 
@@ -106,7 +107,7 @@ function arrayIterationFourth() {
         }
     }
 
-    console.log(number + ' number of elements in the array');
+    console.log('9) Number of elements 4 in the array = ' + number);
 }
 
 
@@ -124,5 +125,7 @@ function getNumberOfEven() {
             sum++;
         }
     }
-    console.log(sum + ' the number of all even');
+    
+    console.log('Homework 15:')
+    console.log('Contain even numbers = ' + sum);
 }
