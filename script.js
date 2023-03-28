@@ -69,7 +69,6 @@ function array() {
             if ((arrayNum[i] % 2) === 1) {
                 amounOddPositiveElements++;
                 sumOddPositiveElements += arrayNum[i];
-                console.log(sumOddPositiveElements);
             }
 
             if ((arrayNum[i] % 2) === 0) {
@@ -79,7 +78,6 @@ function array() {
 
             if (arrayNum[i] === 4) {
                 number++;
-                console.log(number);
             }
         }
     }
