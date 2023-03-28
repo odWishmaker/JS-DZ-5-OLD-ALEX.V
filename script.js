@@ -40,7 +40,6 @@ var amounEvenPositiveElements = 0;
 var sumEvenPositiveElements = 0;
 var sumOddPositiveElements = 0;
 var number = 0;
-var test = 0;
 
 array();
 
