@@ -40,6 +40,7 @@ var amounEvenPositiveElements = 0;
 var sumEvenPositiveElements = 0;
 var sumOddPositiveElements = 0;
 var number = 0;
+var test = 0;
 
 array();
 
@@ -61,7 +62,7 @@ function array() {
             maxNumberArray = arrayNum[i];
         }
 
-        if (arrayNum[i] > amountNegativeElement) {
+        if (arrayNum[i] < 0) {
             amountNegativeElement++;
         }
 
