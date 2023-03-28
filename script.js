@@ -1,4 +1,8 @@
-var userFullName = prompt('Enter your Full Name');
+// ДЗ 13. Правильное обращение
+// Написать функцию которая будет принимать строку с Ф.И.О и будет возвращать 
+// Ф.И.О в правильном регистре. Ф.И.О - нужно запросить у пользователя.
+
+var userFullName = prompt('Enter your Full Name').toLowerCase();
 var userFullNameWill = '';
 
 standartFullName();
@@ -13,115 +17,99 @@ function standartFullName() {
 }
 
 
+// ДЗ 14. Массивы
+// Дан массив [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47]
+// Найти сумму и количество положительных элементов.
+// Найти минимальный элемент массива.
+// Найти максимальный элемент массива.
+// Определить количество отрицательных элементов.
+// Найти количество нечетных положительных элементов.
+// Найти количество четных положительных элементов.
+//      Найти сумму четных положительных элементов.
+//      Найти сумму нечетных положительных элементов.
+//      Найти определить количество элементов, равных 4.
+
 var arrayNum = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
 var sum = 0;
-var i = 0;
+var positiveElement = 0;
+var minNumberArray = 0;
+var maxNumberArray = 0;
+var amountNegativeElement = 0;
+var amounOddPositiveElements = 0;
+var amounEvenPositiveElements = 0;
+var sumEvenPositiveElements = 0;
+var sumOddPositiveElements = 0;
+var number = 0;
 
-arrayIterationFirst();
+array();
 
-function arrayIterationFirst() {
-    arrayNum = arrayNum.filter((num) => num >= 0);
-    for (; i < arrayNum.length; i++) {
-        sum += arrayNum[i];
+function array() {
+    for (i = 0; i < arrayNum.length; i++) {
+        if (arrayNum[i] > 0) {
+            sum += arrayNum[i];
+        }
+
+        if (arrayNum[i] > 0) {
+            positiveElement++;
+        }
+
+        if (arrayNum[i] < minNumberArray) {
+            minNumberArray = arrayNum[i];
+        }
+
+        if (arrayNum[i] > maxNumberArray) {
+            maxNumberArray = arrayNum[i];
+        }
+
+        if (arrayNum[i] > amountNegativeElement) {
+            amountNegativeElement++;
+        }
+
+        if (arrayNum[i] > 0) {
+            if ((arrayNum[i] % 2) === 1) {
+                amounOddPositiveElements++;
+                sumOddPositiveElements += arrayNum[i];
+                console.log(sumOddPositiveElements);
+            }
+
+            if ((arrayNum[i] % 2) === 0) {
+                amounEvenPositiveElements++;
+                sumEvenPositiveElements += arrayNum[i];
+            }
+
+            if (arrayNum[i] === 4) {
+                number++;
+                console.log(number);
+            }
+        }
     }
 
     console.log('Homework 14:');
-    console.log('1) ' + arrayNum.length + ' positive element.' +  'Sum of positive elements = ' + sum);
-}
-
-
-var arrayNum = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
-
-maxMinNumber();
-
-function maxMinNumber() {
-    var max = Math.max.apply(null, arrayNum);
-    arrayNum = arrayNum.filter((numm) => numm <= 0);
-    var min = Math.min.apply(null, arrayNum);
-
-    console.log('2) Minimum array element = ' + min);
-    console.log('3) Maximum array element = ' + max);
-    console.log('4) Number of negative element = ' + arrayNum.length)
-}
-
-
-var arrayNum = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
-var sumOdd = 0;
-var sumEven = 0;
-var i = 0;
-
-arrayIterationSecond();
-
-function arrayIterationSecond() {
-    arrayNum = arrayNum.filter((num) => num >= 0);
-    arrayNum = arrayNum.map((num) => num % 2);
-    for (; i < arrayNum.length; i++) {
-        if (arrayNum[i] == 0) {
-            sumEven += 1;
-        } 
-        
-        if (arrayNum[i] == 1) {
-            sumOdd += 1;
-        }
-    }
-
-    console.log('5) Odd positive elements = ' + sumOdd);
-    console.log('6) Even negative elements = ' + sumEven);
-}
-
-
-var arrayNum = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
-var sumEven = 0;
-var sumOdd = 0;
-var i = 0;
-
-arrayIterationThird();
-
-function arrayIterationThird() {
-    arrayNum = arrayNum.filter((num) => num >= 0);
-    for (; i < arrayNum.length; i++) {
-        if (arrayNum[i] % 2 == 0) {
-            sumEven += arrayNum[i];
-        } 
-        
-        else if (arrayNum[i] % 2 == 1) {
-            sumOdd += arrayNum[i];
-        }
-    }
-
-    console.log('7) The sum of all even' + sumEven);
-    console.log('8) The sum of all odd' + sumOdd);
-}
-
-
-var arrayNum = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
-var number = 0;
-var i = 0;
-
-arrayIterationFourth();
-
-function arrayIterationFourth() {
-    for (; i < arrayNum.length; i++) {
-        if (arrayNum[i] == 4) {
-            number++;
-        }
-    }
-
+    console.log('1) ' + positiveElement + ' positive element.' +  'Sum of positive elements = ' + sum);
+    console.log('2) Minimum array element = ' + minNumberArray);
+    console.log('3) Maximum array element = ' + maxNumberArray);
+    console.log('4) Number of negative element = ' + amountNegativeElement)
+    console.log('5) Amount odd positive elements = ' + amounOddPositiveElements);
+    console.log('6) Amount even positive elements = ' + amounEvenPositiveElements);
+    console.log('7) The sum of all even' + sumEvenPositiveElements);
+    console.log('8) The sum of all odd' + sumOddPositiveElements);
     console.log('9) Number of elements 4 in the array = ' + number);
 }
 
 
-var getNumber = prompt('Entr the number');
-var get = 0;
+// ДЗ 15. Четные числа
+// Написать функцию getNumberOfEven(n) - получить количество 
+// четных цифр в числе
+
+var getNumber = prompt('Entr the number').split('');
 var i = 0;
 var sum = 0;
 
 getNumberOfEven();
 
 function getNumberOfEven() {
-    get = getNumber.split('').map((Number) => Number % 2);
-    for (; i < get.length; i++) {
-        if (+get[i] == 0) {
+    for (; i < getNumber.length; i++) {
+        if ((getNumber[i] % 2) == 0) {
             sum++;
         }
     }
